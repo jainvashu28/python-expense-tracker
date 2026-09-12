@@ -59,7 +59,7 @@ def add_expense(file_path):
     
     expense_categories = ["Food", "Home", "Work", "Fun", "Misc"]
     
-    csv_file = storage.load_expenses(file_path)
+    csv_file = storage.load_expense(file_path)
         
     new_list = []
     for i in csv_file:
@@ -97,7 +97,7 @@ def view_expense(file_path):
     
     total_spent = 0
     
-    lines = storage.load_expenses(file_path)
+    lines = storage.load_expense(file_path)
         
     for line in lines:
         print(f"{line["ID"]} | {line["Name"]} | {line["Category"]} | {line["Amount"]}")    
@@ -110,7 +110,7 @@ def view_expense(file_path):
 
 
 def delete_expense(file_path):
-    new_rows = storage.load_expenses(file_path)
+    new_rows = storage.load_expense(file_path)
 
     if not new_rows:
         print("There are no expenses to delete.")
@@ -143,7 +143,7 @@ def delete_expense(file_path):
 
 
 def edit_expense(file_path):
-    new_rows = storage.load_expenses(file_path)
+    new_rows = storage.load_expense(file_path)
 
     if not new_rows:
         print("There are no expenses to edit.")
